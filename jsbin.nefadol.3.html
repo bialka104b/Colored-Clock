@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by bialka104b (http://jsbin.com/nefadol/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+  <meta name="description" content="kolorowy-zegar">
+  <title>kolorowy zegar</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="scripts.js"></script>
+<style id="jsbin-css">
+* { margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+}
+
+#clock {
+  background-color:yellow;
+  text-align: center;
+  position: relative;
+  top:50%;
+  font-family: 'Gamja Flower', cursive;
+  font-size: 80px;
+  margin-top: -40px;
+}
+</style>
+</head>
+<body class="">
+<div id="clock">12:00:00</div>
+<script id="jsbin-javascript">
+function colorClock(){
+var date = new Date();
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+
+if (hours<10){hours='0'+hours;}
+if (seconds < 10){
+  seconds = '0' + seconds;} 
+if (minutes < 10){
+  minutes = '0' + minutes;}
+var clockFace = hours+':'+minutes+':'+seconds;
+var hexColor = '#' +hours+minutes+seconds;  
+
+document.getElementById('clock').innerHTML = clockFace;
+document.body.style.background = hexColor;
+
+setTimeout(function() {
+colorClock();
+}, 1000); 
+
+}
+
+console.log(colorClock());
+
+
+</script>
+</body>
+</html>
