@@ -8,7 +8,7 @@ function colorClock(){
     if (seconds < 10){seconds = '0' + seconds;} 
     if (minutes < 10){minutes = '0' + minutes;}
     var clockFace = hours+':'+minutes+':'+seconds;
-    var hexColor = '#' +minutes +seconds;  
+    var hexColor = '#' +seconds;  
 
     document.getElementById('clock').innerHTML = clockFace;
     document.body.style.background = hexColor;
